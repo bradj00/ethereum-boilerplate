@@ -1,48 +1,60 @@
 import { useLocation } from "react-router";
 import { Menu } from "antd";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
-function MenuItems() {
+const Page = styled.div`
+    color:            ${props => props.theme.textColor};
+    transition: all .5s ease;
+`;
+
+
+
+const  MenuItems = (props) => {
   const { pathname } = useLocation();
 
+
   return (
-    <Menu
-      theme="light"
-      mode="horizontal"
-      style={{
-        display: "flex",
-        fontSize: "17px",
-        fontWeight: "500",
-        width: "100%",
-        justifyContent: "center",
-      }}
-      defaultSelectedKeys={[pathname]}
-    >
-      <Menu.Item key="/quickstart">
-        <NavLink to="/quickstart">🚀 Quick Start</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/wallet">
-        <NavLink to="/wallet">👛 Wallet</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/1inch">
-        <NavLink to="/1inch">🏦 Dex</NavLink>
-      </Menu.Item>
-      <Menu.Item key="onramp">
-        <NavLink to="/onramp">💵 Fiat</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/erc20balance">
-        <NavLink to="/erc20balance">💰 Balances</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/erc20transfers">
-        <NavLink to="/erc20transfers">💸 Transfers</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/nftBalance">
-        <NavLink to="/nftBalance">🖼 NFTs</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/contract">
-        <NavLink to="/contract">📄 Contract</NavLink>
-      </Menu.Item>
-    </Menu>
+    
+      <Menu
+
+        mode="horizontal"
+        style={{
+          display: "flex",
+          fontSize: "17px",
+          fontWeight: "500",
+          width: "100%",
+          justifyContent: "center",
+          backgroundColor: props.theme.dark.pageBackground,
+          color: props.theme.dark.textColor,
+        }}
+        defaultSelectedKeys={[pathname]}
+      >
+      {/* <Page> */}
+        <Menu.Item key="/buildbattleteam">
+          <NavLink to="/buildbattleteam"><Page>🚀Team Builder</Page></NavLink>
+        </Menu.Item>
+        <Menu.Item key="/wallet">
+          <NavLink to="/wallet"><Page>👛 Match History</Page></NavLink>
+        </Menu.Item>
+        <Menu.Item key="/TestNFTBalancesDeleteMe">
+          <NavLink to="/TestNFTBalancesDeleteMe"><Page>🏦 Barter+(test)</Page></NavLink>
+        </Menu.Item>
+        <Menu.Item key="/MagicItems">
+          <NavLink to="/RedSatelliteCount"><Page>🧙‍♂️ Magic Items</Page></NavLink>
+        </Menu.Item>
+        <Menu.Item key="/PolyBridge">
+          <NavLink to="/RedSatelliteCount"><Page>🌉 PolyBridge</Page></NavLink>
+        </Menu.Item>
+        <Menu.Item key="/Messages">
+          <NavLink to="/RedSatelliteCount"><Page>💬 Messages</Page></NavLink>
+        </Menu.Item>
+        <Menu.Item key="/Whitepaper">
+          <NavLink to="/RedSatelliteCount"><Page>🕮 WhitePaper</Page></NavLink>
+        </Menu.Item>
+      {/* </Page> */}
+      </Menu>
+    
   );
 }
 

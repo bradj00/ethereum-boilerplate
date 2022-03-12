@@ -1,0 +1,8 @@
+.rosterCard2 {
+  content: '';
+}
+.rosterCard2::after {
+  position:'absolute';
+  width: '600px';
+  background-color: '#00ff00';
+}

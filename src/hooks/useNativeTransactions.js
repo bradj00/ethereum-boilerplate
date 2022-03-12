@@ -17,4 +17,24 @@ const useNativeTransactions = (options) => {
   return { getNativeTransations, nativeTransactions, chainId, error, isLoading };
 };
 
+
+// const useNFTsByOwnerAndContract = (options) => {
+//   const { account } = useMoralisWeb3Api();
+//   const { chainId } = useMoralis();
+//   const [NFTsForContract, setNFTsForContract] = useState([]);
+//   const {
+//     fetch: userNFTsForContract,
+//     data,
+//     error,
+//     isLoading,
+//   } = useMoralisWeb3ApiCall(account.getNFTsForContract, { chain: chainId, ...options });
+
+//   useEffect(() => data && setNFTsForContract(data?.result), [data]);
+
+//   return { userNFTsForContract, NFTsForContract, chainId, error, isLoading };
+// }
+
+
+
+
 export default useNativeTransactions;

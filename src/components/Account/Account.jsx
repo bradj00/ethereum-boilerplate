@@ -8,6 +8,9 @@ import { SelectOutlined } from "@ant-design/icons";
 import { getExplorer } from "helpers/networks";
 import Text from "antd/lib/typography/Text";
 import { connectors } from "./config";
+
+
+
 const styles = {
   account: {
     height: "42px",
@@ -41,6 +44,13 @@ const styles = {
     marginBottom: "8px",
     height: "30px",
   },
+  button: {
+    fontSize: "15px",
+    backgroundColor: "#0048a7",
+    borderRadius: "8px",
+    border: "1px solid #0059e1",
+    color: "#fff"
+  }
 };
 
 function Account() {
@@ -51,11 +61,19 @@ function Account() {
   if (!isAuthenticated || !account) {
     return (
       <>
-        <div
+        {/* <div
           onClick={() => setIsAuthModalVisible(true)}
         >
           <p style={styles.text}>Authenticate</p>
-        </div>
+          
+        </div> */}
+
+
+
+        <Button style={styles.button} onClick={() => setIsAuthModalVisible(true)} >
+            Connect Wallet
+        </Button>
+
         <Modal
           visible={isAuthModalVisible}
           footer={null}
@@ -116,6 +134,7 @@ function Account() {
       </button> */}
       <div style={styles.account} onClick={() => setIsModalVisible(true)}>
         <p style={{ marginRight: "5px", ...styles.text }}>{getEllipsisTxt(account, 6)}</p>
+        {/* <p style={{ marginRight: "5px", ...styles.text }}>{account}</p> */}
         <Blockie currentWallet scale={3} />
       </div>
       <Modal

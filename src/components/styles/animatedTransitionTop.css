@@ -1,0 +1,13 @@
+@keyframes animateTransitionUp {
+    0% {
+      top: 0%;
+
+    }
+    100% {
+      top: -1500px;
+    }
+  };
+
+  
+
+
